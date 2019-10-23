@@ -1,6 +1,15 @@
 import React from "react";
-import JSXVariables from "./components/JSXVariables";
+import Header from "./components/Header";
+import Section from "./components/Section";
 
-const App = () => <JSXVariables />;
+import Navbar from "./components/Navbar";
+
+const App = () => (
+  <div>
+    <Navbar />
+    <Header />
+    <Section />
+  </div>
+);
 
 export default App;
