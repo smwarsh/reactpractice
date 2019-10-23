@@ -2,8 +2,14 @@ import React from "react";
 import "../styles/Section.css";
 
 // By importing the Section.css file, it is added to the DOM whenever this component loads
+
+const sectionStyle = {
+  background: 'orange',
+  textAlign: 'justify'
+};
+
 const Section = () => (
-  <section className="section" style={{'background': 'orange'}}>
+  <section className="section" style={sectionStyle}>
     <h2>Lorem Ipsum Dolor Sit Amet</h2>
     <p>
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
