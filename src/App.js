@@ -1,15 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import Section from "./components/Section";
+import Calculator from "./components/Calculator";
 
-import Navbar from "./components/Navbar";
-
-const App = () => (
-  <div>
-    <Navbar />
-    <Header />
-    <Section />
-  </div>
-);
+const App = () => <Calculator />;
 
 export default App;
