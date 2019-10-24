@@ -1,27 +1,24 @@
 import React from "react";
 
 const Math = (props) => {
-    const num1Int = Number(props.num1);
-    const num2Int = Number(props.num2);
     let answer;
-    
+
     switch (props.operator) {
         case '+':
-            answer = num1Int + num2Int;
+            answer = props.num1 + props.num2;
             break;
         case '-':
-            answer = num1Int - num2Int;
+            answer = props.num1 - props.num2;
             break;
         case '*':
-            answer = num1Int * num2Int;
+            answer = props.num1 * props.num2;
             break;
         case '/':
-            answer = num1Int / num2Int;
+            answer = props.num1 / props.num2;
             break;
     }
 
-    const fontStyle = {fontSize: answer};
-    return <span style={fontStyle}>{answer}</span>;
+    return <span style={{ fontSize: answer }}>{answer}</span>;
 };
 
 export default Math;
