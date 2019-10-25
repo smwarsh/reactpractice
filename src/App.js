@@ -4,12 +4,22 @@ import Title from "./components/Title";
 import friends from "./friends.json";
 import FriendCard from "./components/FriendCard";
 
+function printFriends(friendsArray) {
+  let printOut = [];
+  for (let i = 0; i < friendsArray.length; i++) {
+    printOut.push(<FriendCard name={friends[i].name} image={friends[i].image} occupation={friends[i].occupation} location={friends[i].location} />);
+  }
+  return printOut;
+}
+
+const printMyFriends = friends.map( i => <FriendCard name={i.name} image={i.image} occupation={i.occupation} location={i.location} /> );
+
 const App = () => (
   <Wrapper>
     <Title>Friends List</Title>
-    <FriendCard name={friends[0].name} image={friends[0].image} occupation={friends[0].occupation} location={friends[0].location} />
-    <FriendCard name={friends[1].name} image={friends[1].image} occupation={friends[1].occupation} location={friends[1].location} />
-    <FriendCard name={friends[2].name} image={friends[2].image} occupation={friends[2].occupation} location={friends[2].location} />
+    {printFriends(friends)}
+    {printMyFriends}
+    {friends.map( i => <FriendCard name={i.name} image={i.image} occupation={i.occupation} location={i.location} /> )}
   </Wrapper>
 );
 
