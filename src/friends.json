@@ -22,5 +22,13 @@
       "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
     "occupation": "Cashier",
     "location": "An Easter Island Head"
+  },
+  {
+    "id": 4,
+    "name": "Sandy",
+    "image":
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Sandy_Cheeks.svg/1200px-Sandy_Cheeks.svg.png",
+    "occupation": "Scientist and inventor",
+    "location": "Treedome"
   }
 ]
