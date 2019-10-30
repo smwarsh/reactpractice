@@ -9,6 +9,10 @@ class App extends React.Component {
     friends: friends
   };
 
+  removeFriend = (id) => {
+    this.setState({friends: this.state.friends.filter(friend => friend.id !== id)});
+  }
+
   render() {
     return(
       <Wrapper>
@@ -20,6 +24,8 @@ class App extends React.Component {
             image={friend.image}
             occupation={friend.occupation}
             location={friend.location}
+            id={friend.id}
+            remove={this.removeFriend}
           />
         )}
       </Wrapper>
