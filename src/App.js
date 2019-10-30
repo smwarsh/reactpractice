@@ -9,6 +9,7 @@ const App = () => (
     <h1 className="title">Friends List</h1>
     {friends.map( friend =>
       <FriendCard
+        key={friend.id}
         name={friend.name}
         image={friend.image}
         occupation={friend.occupation}
