@@ -11,13 +11,23 @@ class Form extends Component {
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
-    const value = event.target.value;
-    const name = event.target.name;
+    const value = event.target.value; // what the user has entered
+    const name = event.target.name; // name of the field
 
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
+    if(name === 'password') { // if it's the password field, don't let the state get higher than 15 characters
+      this.setState({
+        // [name] replaces 'name' with firstName, lastName, etc. The `name` of each input has to match the variables in the state
+        [name]: value.substring(0,15) // set what the user has entered to be only the first 15 characters of it
+      });
+    } else {
+      // Updating the input's state
+      // With no character limit
+      this.setState({
+        [name]: value
+      });
+    }
+
+
   };
 
   handleFormSubmit = event => {
@@ -29,8 +39,6 @@ class Form extends Component {
       alert('Fill out your first and last name please!');
     } else if(this.state.password.length < 6) { // Make sure password is at least 6 characters long
       alert(`Choose a more secure password, ${this.state.firstName} ${this.state.lastName}`);
-    } else if(this.state.password.substring(15)) { // Make sure password is not longer than 15 characters long
-      alert('Your password may not be longer than 15 characters');
     } else { // Everything is ok!
       // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
       // Clear the input for password too
