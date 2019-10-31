@@ -10,7 +10,8 @@ class Form extends Component {
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
+    const value = event.target.value;
+    const name = event.target.name;
 
     // Updating the input's state
     this.setState({
