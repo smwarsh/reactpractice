@@ -24,17 +24,22 @@ class Form extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    if(this.state.firstName && this.state.lastName) {
+    
+    if(!this.state.firstName || !this.state.lastName) { // Make sure user has filled out both first and last name
+      alert('Fill out your first and last name please!');
+    } else if(this.state.password.length < 6) { // Make sure password is at least 6 characters long
+      alert(`Choose a more secure password, ${this.state.firstName} ${this.state.lastName}`);
+    } else if(this.state.password.substring(15)) { // Make sure password is not longer than 15 characters long
+      alert('Your password may not be longer than 15 characters');
+    } else { // Everything is ok!
       // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
       // Clear the input for password too
       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-      this.setState({
+      this.setState({ // Reset fields to be blank after successful submission
         firstName: "",
         lastName: "",
         password: ""
       });
-    } else {
-      alert('Fill out your first and last name please!');
     }
 
 
