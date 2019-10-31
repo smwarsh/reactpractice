@@ -24,14 +24,20 @@ class Form extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    // Clear the input for password too
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    this.setState({
-      firstName: "",
-      lastName: "",
-      password: ""
-    });
+    if(this.state.firstName && this.state.lastName) {
+      // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+      // Clear the input for password too
+      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+      this.setState({
+        firstName: "",
+        lastName: "",
+        password: ""
+      });
+    } else {
+      alert('Fill out your first and last name please!');
+    }
+
+
   };
 
   render() {
